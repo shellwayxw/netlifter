@@ -32,6 +32,8 @@ Dependency:
 * z3-4.8.12, better to use [my copy](https://github.com/qingkaishi/z3/tree/4.8.12-popeye), need to compile and install using [cmake](https://github.com/qingkaishi/z3/blob/4.8.12-popeye/README-CMake.md).
 
 ```bash
+$ git clone git@github.com:qingkaishi/netlifter.git
+$ cd netlifter
 $ mkdir build
 $ cd build
 $ cmake ..
