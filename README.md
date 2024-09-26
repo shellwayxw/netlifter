@@ -14,12 +14,12 @@ The ACM Conference on Computer and Communications Security (CCS '23)
 News! A follow-up work on identifying silent protocol bugs has been accepted by OOPSLA 2024! 
 - [Paper](https://qingkaishi.github.io/public_pdfs/OOPSLA2024.pdf)
 - [Artifact](https://github.com/zmw12306/ParDiff)
-- **ACM SIGPLAN Distinguished Paper Award**
 
 ```
 ParDiff: Practical Static Differential Analysis of Network Protocol Parsers
 Mingwei Zheng, Qingkai Shi, Xuwei Liu, Xiangzhe Xu, Le Yu, Congyu Liu, Guannan Wei, Xiangyu Zhang
 Proceedings of the ACM on Programming Languages (OOPSLA '24)
+ACM SIGPLAN Distinguished Paper Award!!!
 ```
 
 ### Disclaimer 
