@@ -19,7 +19,7 @@ News! A follow-up work on identifying silent protocol bugs has been accepted by 
 ParDiff: Practical Static Differential Analysis of Network Protocol Parsers
 Mingwei Zheng, Qingkai Shi, Xuwei Liu, Xiangzhe Xu, Le Yu, Congyu Liu, Guannan Wei, Xiangyu Zhang
 Proceedings of the ACM on Programming Languages (OOPSLA '24)
-ACM SIGPLAN Distinguished Paper Award!!!
+!!!ACM SIGPLAN Distinguished Paper Award!!!
 ```
 
 ### Disclaimer 
