@@ -388,19 +388,21 @@ std::string DDLLang::Production2DDL(Production& P)
         code += lhs;
         errs()<<lhs;
     }
-
+    std::vector<std::vector<unsigned>> Productions;
     for(auto rhs_it = P.rhs_begin(); rhs_it != P.rhs_end(); rhs_it = std::next(rhs_it))
     {
+        std::vector<unsigned> RHS_conjuction;
         auto Items = *rhs_it;
         for (unsigned i = 0; i < Items.size(); ++i) 
         {
             RHSItem *Item = Items[i];
             if (auto *PItem = dyn_cast<Production>(Item)) 
             {
-                std::string rhs_l = space(4) + "L" + std::to_string(PItem->getLHS());
-                code += rhs_l;
-                errs()<<rhs_l;
-            } 
+                RHS_conjuction.push_back(PItem->getLHS());
+                // std::string rhs_l = space(4) + "L" + std::to_string(PItem->getLHS()) + "\n";
+                // code += rhs_l;
+                // errs()<<rhs_l;
+            }
             else if (auto *IItem = dyn_cast<Interval>(Item)) 
             {
                 auto From = IItem->getFrom();
@@ -568,17 +570,42 @@ std::string DDLLang::Production2DDL(Production& P)
                 // errs() << " ";
             }
         }
+        // add a conjunction
+        if(!RHS_conjuction.empty())
+        {
+            Productions.push_back(RHS_conjuction);
+        }
+        
         if (std::next(rhs_it)== P.rhs_end()) 
         {
             // errs() << " ";
         } 
         else 
         {
-            code += " <| ";
-            errs() << " <| ";
+            // code += space(4) + "<|\n";
+            // errs() << space(4)<<"<|\n";
         }
-        
     }
+
+    std::string disj_parsers = space(4);
+    for(int i = 0; i < Productions.size(); i++)
+    {
+        std::string conj_parsers = "{ ";
+        for(int j = 0; j < Productions[i].size(); j++)
+        {
+            conj_parsers += "L" + std::to_string(Productions[i][j]) + "; ";
+        }
+        conj_parsers += "}";
+        disj_parsers += conj_parsers;
+        if(i != Productions.size() - 1)
+        {
+            disj_parsers += " <| ";
+        }
+    }
+    disj_parsers += "\n";
+    errs()<<disj_parsers;
+    code += disj_parsers;
+
     if (!P.Assertions.empty()) 
     {
         for (auto Assert: P.Assertions) {
