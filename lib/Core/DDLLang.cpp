@@ -340,7 +340,7 @@ def Len =
     let a = bytesOfStream cur
     length a
 
-def Extract (High : uint 64) (Low : uint 64) (N : uint 64) = 
+def Extract (N : uint 64) (High : uint 64) (Low : uint 64) = 
   block
     let mask = (1 << (High - Low + 1)) - 1
     (N >> Low) .&. mask
@@ -361,7 +361,7 @@ std::string GenHelperFunctionsInDDL()
     s += space(4) + "let a = bytesOfStream cur\n";
     s += space(4) + "length a\n\n";
 
-    s += "def Extract (High : uint 64) (Low : uint 64) (N : uint 64) =\n";
+    s += "def Extract (N : uint 64) (High : uint 64) (Low : uint 64) =\n";
     s += space(2) + "block\n";
     s += space(4) + "let mask = (1 << (High - Low + 1)) - 1\n";
     s += space(4) + "(N >> Low) .&. mask\n\n";

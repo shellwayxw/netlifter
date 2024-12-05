@@ -58,6 +58,22 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "cstdarg": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "__node_handle": "cpp",
+        "__split_buffer": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "__functional_base": "cpp",
+        "locale": "cpp",
+        "numeric": "cpp",
+        "__config": "cpp",
+        "__functional_03": "cpp",
+        "__hash_table": "cpp",
+        "__tree": "cpp",
+        "__tuple": "cpp",
+        "optional": "cpp",
+        "__bit_reference": "cpp",
+        "__string": "cpp",
+        "__nullptr": "cpp"
     }
 }
